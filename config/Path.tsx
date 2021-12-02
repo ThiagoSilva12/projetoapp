@@ -1,0 +1,1 @@
+export const Agendamento "http:///10.26.45.60:3000";
