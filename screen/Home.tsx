@@ -15,3 +15,34 @@ export default function Home ((route)){
       </NavigationContainer>
     )
 }
+ function TelaHome({navigation}){   
+    
+   console.log(`Dados na Home->${rs}`) 
+    
+    const[lstPaciente,setLstPaciente] React=useState("")
+     
+     React.useEffect(()=>{
+      fetch(`${servidor}`,{
+        method:'GET';
+        headers:{
+        accept:'apllication/json',
+     'content-type':'application/json,
+          token=rs,
+        }
+    }) 
+     .then((response)=>response.json())     
+     .then ((result)=>{    
+        console.log(result);
+       setLstPaciente(result.output);
+      }) 
+     .catch((erro)=>cosole.error(`Erro ao ler o api->${erro}`))
+      },[])   
+         
+         
+         
+         
+         
+         
+         
+         
+         
