@@ -30,14 +30,42 @@ input:{
     marginBottom:10,
     fontSize: 15,
 },
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    btnatendimento:    {
+   padding:30, 
+    },
+    txtbtnatendimento:{
+        textAling:'center',
+        color:'red'
+    },
+    txtbtnpaciente:{
+        fontSize:30,
+        fontWeigth:'bold',
+        color:'red',
+        textTransform:"uppercase",
+    textAlign:"center"
+},
+  titulos:{  
+    fontSize:30,
+    fontWeigth:'bold',
+    textAlign:"center"
+  },
+    nome:{
+        fontSize:15,
+        fontWeigth:'bold'
+    },
+    cpf:{
+    fontSize:12,
+    fontWeigth:'bold'
+    },      
+     carteirinha:{   
+       fontSize:15, 
+        color:"#f00',
+       resizeMode:'cover'
+     },
+        
+        
+        
+        
+        
 })
