@@ -13,8 +13,43 @@ const [senhaPaciente,setSenhaPaciente]= React.useState("");
 const [cpfPaciente,setCPFPaciente] = React.useState("");
 
     return(
-        <View>
-            <Text>Tela Agendamento</Text>
+        <View style={styles.container}>
+            <Text style={styles.titulos}>Agenamento Cliente</Text>
+            <View style={styles.controles>
+            <TextInput 
+                placeholder="Nome do Paciente" 
+                style={styles.input} 
+                onChanceText{(value)=>setNomePaciente(value)}     
+                value={nomePaciente}
+                />
+            <TextInput
+                placeholder="CPF"
+                style={styles.input}
+                onChanceText{(value)=>setCPFPaciente(value)}
+                value={cpfPaciente}
+                />
+             <TextInput
+                 placeholder="Carteirinha"
+                style={styles.input}
+                onChanceText{(value)=>setCarteirinhaPaciente(value)}
+                value={carteirinhaPaciente}    
+                />
+            
         </View>
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
