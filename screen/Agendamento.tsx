@@ -39,16 +39,54 @@ const [cpfPaciente,setCPFPaciente] = React.useState("");
     )
 }
 
+                
+                <TouchableOpacity style={styles.btnlogar} onPress={()=>{
+
+nome = nomePaciente;
+carteirinha = carteirinhaPaciente;
+cpf = cpfPaciente;
+
+efetuarAgendamento();
+
+setNomePaciente("");
+setCPFPaciente("");
+setCarteirinhaPaciente("");
+
+   }}>
+
+<Text style={styles.txtbtnagendamento}>Agendar</Text>
+</TouchableOpacity>
+            </View>
+        </View>
+    );
+}
 
 
 
+function efetuarAgendamento(){
 
 
+fetch(`${servidor}/agendamento`,{
+    method:"POST",  
+    headers:{
+        accept:"application/json",
+        "content-type":"application/json",
+    },
+    body:JSON.stringify({
+        nome:nome,
+        carteirinha:carteirinha,
+        cpf:cpf,
+       
+    })
+}).then((response)=>response.json())
+.then((resultado)=>{
+    Alert.alert("Aviso", resultado.output);
+    // console.log(resultado);
+})
+.catch((erro)=>console.error(`Erro ao executar->${erro}`));
 
 
-
-
-
+}
 
 
 
