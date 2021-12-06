@@ -37,12 +37,32 @@ export default function Home ((route)){
       }) 
      .catch((erro)=>cosole.error(`Erro ao ler o api->${erro}`))
       },[])   
-         
-         
-         
-         
-         
-         
-         
-         
-         
+    
+     
+   return (    
+     <View style={styles.container}
+     
+     <ScrollView horizontal={false} style={styles.scroll}>
+     
+         <Image source {{uri:""}}style={styles.imgpaciente}/>
+         <View>
+             {
+         lstPaciente.map((item.index))=>(
+               <View style={styles.paciente} key={index}>
+                   <Text style={styles.nome}>Nome:  {item.nome}</Text>
+                   <Text style={styles.cpf}>CPF:  {item.cpf}</Text>
+                 <Text style={styles.carteirinha}>Carteirinha:  {item.carteirinha}</Text>
+         <TouchableOpacity onPress={()=>{
+                        navigation.navigate("Atualizar",{cliente:item , token:rs});
+
+                    }}>
+                   <AntDesign name="edit" size={24} color="black" />
+                    </TouchableOpacity>
+                   </View>
+                         ))
+            }
+           </View>
+           </ScrollView>
+        </View>
+    )
+}
