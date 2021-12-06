@@ -52,4 +52,28 @@ const[senha,setSenha] =React.useState("");
           )
 }          
                 
-                
+ function efetuarPaciente(){
+    fetch(`${servidor}/paciente`,{
+        method:"POST",
+        headers:{
+            accept:"application/json",
+            "content-type":"application/json"
+        },
+        body:JSON.stringify({
+            nome:us,
+            senha:sh
+        })
+    })
+    .then((response)=>response.json())
+    .then((rs)=>{
+      //  console.log(rs);
+        resultado[0] = rs.output;
+        resultado[1] = rs.payload;
+        resultado[2] = rs.token;
+    })
+    .catch((erro)=>console.error(`Erro ao tentar buscar a api->${erro}`))
+    return resultado;
+} 
+                   
+                   
+                   
